@@ -46,6 +46,28 @@ public class Book {
     public int getYearOfPublishing() {
         return yearOfPublishing;
     }
+    public void setIsbn(long isbn) {
+        this.isbn = checkIsbn(isbn);
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setYearOfPublishing(int yearOfPublishing) {
+        this.yearOfPublishing = yearOfPublishing;
+    }
+    private long checkIsbn(long isbn) {
+        if (isbn >= 1_000_000_000_000L && isbn <= 9_999_999_999_999l) {
+            return isbn;
+        }
+        return -1;
+    }
+
 
     public void display() {
         System.out.println("ISBN:\t" + isbn + "\nTitle:\t" + title +
