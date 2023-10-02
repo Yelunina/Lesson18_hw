@@ -18,17 +18,17 @@ public class Book {
     private int yearOfPublishing;
 
     public Book(long isbn, String title, String author, int yearOfPublishing) {
-        this.isbn = isbn;
+        this.isbn = checkIsbn(isbn);
         this.title = title;
         this.author = author;
         this.yearOfPublishing = yearOfPublishing;
     }
 
     public Book(long isbn, String title, int yearOfPublishing) {
-        this.isbn = isbn;
+        this.isbn = checkIsbn(isbn);
         this.title = title;
-        author = "without author";
         this.yearOfPublishing = yearOfPublishing;
+        author = "unknown";
     }
 
     public long getIsbn() {
